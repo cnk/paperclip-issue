@@ -1,0 +1,25 @@
+<h1>Listing document_categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @document_categories.each do |document_category| %>
+      <tr>
+        <td><%= document_category.name %></td>
+        <td><%= link_to 'Show', document_category %></td>
+        <td><%= link_to 'Edit', edit_document_category_path(document_category) %></td>
+        <td><%= link_to 'Destroy', document_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Document category', new_document_category_path %>
